@@ -1,0 +1,1 @@
+export type {buttonProps} from "./button.type";
