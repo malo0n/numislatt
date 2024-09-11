@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="h-[429px] px-[108px] py-16 bg-mainBlack flex justify-between text-secondaryWhite">
       <div className="h-full flex flex-col justify-between gap-[7px]">
-        <NavLink to={routes.home_page} className="flex gap-[7px] items-center">
+        <NavLink to={routes.items_page} className="flex gap-[7px] items-center">
           <img
             className="w-[57px] border-secondaryWhite"
             src={logo}

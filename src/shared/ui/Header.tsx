@@ -8,8 +8,8 @@ import flag from "@/shared/image/flagBritish.png";
 
 export const Header = () => {
   return (
-    <header className="h-[92px] w-ful flex justify-between items-center px-[108px] bg-mainWhite border-b-2 border-solid border-tetriaryBlack text-mainBlack">
-      <NavLink to={routes.home_page} className="flex gap-1">
+    <header className="h-[92px] w-ful flex justify-between items-center px-[112px] bg-mainWhite border-b-2 border-solid border-tetriaryBlack text-mainBlack">
+      <NavLink to={routes.items_page} className="flex gap-1">
         <img className="" src={logo} alt="logo" />
         <p className="font-habibi text-2xl">Numislatt</p>
       </NavLink>
