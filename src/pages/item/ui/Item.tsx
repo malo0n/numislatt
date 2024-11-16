@@ -1,22 +1,23 @@
 import { NavLink, useParams } from "react-router-dom";
 import { CustomSlider } from "./CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
-import { Button } from "@/shared/ui";
+import { Button, Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
-import { useProduct } from "../api/queries";
 import { ProductCardProps } from "../model/types";
+import { useProduct } from "../hooks/useProduct";
 
 
 export function Item() {
   const { id } = useParams()
   const {data, isLoading, isError} = useProduct(Number(id))
-  if (isLoading) {
-    return <div>Loading...</div>
+  const { coin, recommendations } = data
+  if (isLoading || !coin || !recommendations) {
+    return <Loader/>
   }
-  if (isError || !data) {
+  if (isError) {
     return <div>Error</div>
   }
-  const { name, price, description, images, year, country, recommendations } = data
+  const { name, price, description, images, year, country } = coin
   return (
     <section className='flex flex-col px-[108px] py-[64px] gap-[124px]'>
       <div className="flex flex-col gap-[27px]">

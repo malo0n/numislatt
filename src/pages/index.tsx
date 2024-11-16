@@ -5,7 +5,7 @@ import { Item } from '@/pages/item/ui/Item';
 
 function PageOutlet() {
   return (
-    <div className='flex h-full flex-col bg-mainWhite'>
+    <div className='flex min-h-[85dvh] flex-col bg-mainWhite'>
       <Header></Header>
       <Outlet />
       <Footer></Footer>

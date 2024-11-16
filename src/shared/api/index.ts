@@ -1,5 +1,6 @@
 import axios from 'axios';
+import { baseUrl } from '../config';
 
 export const api = axios.create({
-  baseURL: 'https://numislat-api.onrender.com/api/',
+  baseURL: baseUrl,
 });

@@ -30,7 +30,6 @@ export interface ProductProps {
   year: number;
   price: number;
   quantity: number;
-  recommendations: ProductCardProps[];
 }
 
 export interface ProductCardProps {

@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { routes } from "../lib";
 import logo from "@/shared/image/icons/logoWhite.svg";
-import map from "@/shared/image/map.png";
 
 export function Footer() {
   return (
@@ -54,7 +53,6 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-[71px] w-fit items-end">
-          <img className="w-[456px]" src={map} alt="map" />
           <p>©Numislatt. All rights reserved.</p>
         </div>
       </div>

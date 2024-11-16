@@ -18,13 +18,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        mainWhite: "#f7f7f7",
-        secondaryWhite: "#fcfcfc",
+        mainWhite: "#FCFCFC",
+        secondaryWhite: "#F7F7F7",
+        zatychka: '#F5F5F5',
         mainBlack: "#000",
         secondaryBlack: "rgba(0, 0, 0, 0.3)",
         tetriaryBlack: "rgba(0, 0, 0, 0.05)",
-        brandBlue: "#0E52FF",
-
+        brandBlue: "#0C48E5",
+        accentRed: '#FF4647',
+        mainYellow: '#EED40F',
+        secondaryYellow: '#CBB517',
+        tetriaryYellow: '#F4EDB1',
       },
     },
   },
