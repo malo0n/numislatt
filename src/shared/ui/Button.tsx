@@ -6,7 +6,7 @@ export function Button(props: buttonProps) {
   return type === "primary" ? (
     <button
       onClick={onClick}
-      className={`${className} z-10 flex w-full items-center justify-center gap-3 rounded-lg bg-[#fbe366] px-6 py-[10px] text-2xl`}
+      className={`${className} flex w-full items-center justify-center gap-3 rounded-lg bg-mainYellow px-6 py-4 text-16 leading-[125%] h-fit text-mainBlack`}
     >
       {icon && <img className='w-8' src={icon} alt='icon'></img>}
       <p>{text}</p>
@@ -14,7 +14,7 @@ export function Button(props: buttonProps) {
   ) : (
     <button
       onClick={onClick}
-      className='z-10 flex w-full items-center justify-center gap-3 rounded-lg border-2 border-solid border-secondaryBlack py-[10px] text-2xl'
+      className='flex w-full items-center justify-center gap-3 box-border rounded-lg border-2 border-solid border-secondaryBlack py-4 text-16 leading-[125%] h-fit'
     >
       {icon && <img className='w-8' src={icon} alt='icon'></img>}
       <p>{text}</p>
