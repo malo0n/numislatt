@@ -56,7 +56,7 @@ export function Item() {
       </div>
 
       <div className='flex flex-col gap-16'>
-        <p className='text-[48px] font-medium'>You may also like</p>
+        <p className='text-32'>You may also like</p>
         <div className='grid w-full grid-cols-3 gap-6'>
           {recommendations.map((item: ProductCardProps) => (
             <ItemCard key={item.id} {...item} />
