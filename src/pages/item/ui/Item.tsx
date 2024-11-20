@@ -3,7 +3,7 @@ import { CustomSlider } from "./CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
 import { Button, Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
-import { ProductCardProps } from "../model/types";
+import { ProductCardProps } from "@/pages/items/model/types";
 import { useProduct } from "../hooks/useProduct";
 
 export function Item() {

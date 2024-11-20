@@ -1,16 +1,17 @@
 import { api } from "@/shared/api"
-import { ProductCardProps, ProductProps } from "../model/types"
+import { ProductCardProps } from "@/pages/items/model/types";
+import { ItemProps } from "@/pages/item/model/types";
 
-export const getProduct = async (id: number): Promise<ProductProps> => {
+export const getItem = async (id: number): Promise<ItemProps> => {
   try {
-    const itemData: ProductProps = await api.get(`products/${id}/`).then((res) => res.data);
+    const itemData: ItemProps = await api.get(`products/${id}/`).then((res) => res.data);
     return itemData;
   } catch (error) {
     console.error(error);
     throw new Error('Failed to fetch product');
   }
 }
-export const getProductRecommendations = async (id: number): Promise<ProductCardProps[]> => {
+export const getItemRecommendations = async (id: number): Promise<ProductCardProps[]> => {
   try {
     const itemRecommendations: ProductCardProps[] = await api.get(`products/${id}/recomendations/`).then((res) => res.data);
     return itemRecommendations;

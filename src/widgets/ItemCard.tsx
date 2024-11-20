@@ -1,6 +1,6 @@
 import { Button } from "@/shared/ui";
 import cart from "@/shared/image/icons/addToCart.svg";
-import { ProductCardProps } from "@/pages/item/model/types";
+import { ProductCardProps } from "@/pages/items/model/types";
 import { NavLink } from "react-router-dom";
 
 export function ItemCard(props: ProductCardProps) {

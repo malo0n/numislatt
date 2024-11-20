@@ -2,6 +2,7 @@ import { Header, Footer } from "@/shared/ui";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { routes } from "@/shared/lib";
 import { Item } from '@/pages/item/ui/Item';
+import ItemsList from "./items/ui/ItemsList";
 
 function PageOutlet() {
   return (
@@ -23,7 +24,8 @@ export function Routing() {
   return (
     <Routes location={location} key={location.pathname}>
       <Route path={routes.login_page} element={<></>} />
-      <Route path={routes.items_page} element={<PageOutlet />}>
+      <Route element={<PageOutlet />}>
+        <Route path={routes.items_page} element={<ItemsList />}/>
         <Route path={routes.item_page} element={<Item/>} />
       </Route>
     </Routes>
