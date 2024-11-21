@@ -1,20 +1,20 @@
 import { useQueries, UseQueryResult } from "@tanstack/react-query"
-import { getProduct, getProductRecommendations } from "../api/queries"
+import { getItem, getItemRecommendations } from "../api/queries"
 import { useCallback } from "react"
-import { ProductCardProps, ProductProps } from "../model/types"
+import { IProductCard, IItem } from "../model/types"
 export const useProduct = (id: number) => {
   return useQueries({
     queries: [
       {
         queryKey: ['product', id],
-        queryFn: () => getProduct(id),
+        queryFn: () => getItem(id),
       },
       {
         queryKey: ['productRecommendations', id],
-        queryFn: () => getProductRecommendations(id),
+        queryFn: () => getItemRecommendations(id),
       }
     ],
-    combine: useCallback((data: [UseQueryResult<ProductProps>, UseQueryResult<ProductCardProps[]> ]) => {
+    combine: useCallback((data: [UseQueryResult<IItem>, UseQueryResult<IProductCard[]> ]) => {
       return {
         data: {coin: data[0].data, recommendations: data[1].data},
         isLoading: data.some((item) => item.isLoading),

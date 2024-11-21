@@ -1,12 +1,20 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@tanstack/react-router";
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    const savedPosition = sessionStorage.getItem(location.pathname);
+    if (savedPosition) {
+      window.scrollTo(0, parseInt(savedPosition, 10));
+    } else {
+      window.scrollTo(0, 0);
+    }
+    return () => {
+      sessionStorage.setItem(location.pathname, window.scrollY.toString());
+    };
+  }, [location]);
 
   return null;
 }

@@ -1,3 +1,5 @@
+import { continents, countries } from "@/pages/items/model/types";
+
 export interface CarouselIndicatorsProps {
   images: string[];
   activeIndex: number;
@@ -8,8 +10,8 @@ export interface CustomSliderProps {
   children: string[];
 }
 
-export interface ProductProps {
-  id: number;
+export interface IItem {
+  readonly id: number;
   name: string;
   description: string;
   images: [
@@ -23,27 +25,9 @@ export interface ProductProps {
     name: string;
   };
   country: {
-    iso: string;
+    iso: countries;
     name: string;
-    continent: "Europe";
-  };
-  year: number;
-  price: number;
-  quantity: number;
-}
-
-export interface ProductCardProps {
-  id: number;
-  name: string;
-  image: string;
-  grade: {
-    code: string;
-    name: string;
-  };
-  country: {
-    iso: string;
-    name: string;
-    continent: "Europe";
+    continent: continents;
   };
   year: number;
   price: number;

@@ -1,7 +1,7 @@
 module.exports = {
   mode: "jit",
   important: true,
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   darkMode: "class",
   theme: {
     screens: {
@@ -16,14 +16,14 @@ module.exports = {
       habibi: ["Habibi", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
     },
-    extend:{
-      fontSize:{
-        '12': ['12px', { fontWeight: 500}],
-        '16': ['16px', { fontWeight: 500}],
-        '24': ['24px', { fontWeight: 500}],
-        '32': ['32px', { fontWeight: 500}],
-        '40': ['40px', { fontWeight: 500}],
-      }
+    extend: {
+      fontSize: {
+        12: ["12px", { fontWeight: 500 }],
+        16: ["16px", { fontWeight: 500 }],
+        24: ["24px", { fontWeight: 500 }],
+        32: ["32px", { fontWeight: 500 }],
+        40: ["40px", { fontWeight: 500 }],
+      },
     },
     colors: {
       mainWhite: "#FCFCFC",
