@@ -1,7 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Routing } from "../pages";
 import { Suspense } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Loader } from "@/shared/ui";
 import { ScrollToTop } from "@/shared/helpers/ScrollToTop";
 import { LazyMotion, domMax } from "motion/react";
@@ -23,10 +21,7 @@ export function App() {
       <Suspense fallback={<Loader />}>
         {/* <AuthProvider> */}
           <LazyMotion features={domMax}>
-            <Router>
               <ScrollToTop />
-              <Routing />
-            </Router>
           </LazyMotion>
         {/* </AuthProvider> */}
         {/* <ToastContainer /> */}

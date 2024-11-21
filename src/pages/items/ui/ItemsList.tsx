@@ -1,27 +1,28 @@
-import { useSearchParams } from "react-router-dom";
 import { useGetItems } from "../hooks/useGetItems";
-import { SearchParamsToFilters } from "../helpers/searchParamsToFilters";
+// import { SearchParamsToFilters } from "../helpers/searchParamsToFilters";
 import { Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
 
 
 
-const ItemsList = () => {
-  const [urlSearchParams, setUrlSearchParams] = useSearchParams();
-  const { data, isLoading, isError } = useGetItems(urlSearchParams);
+export const ItemsList = () => {
+  // const [urlSearchParams, setUrlSearchParams] = useSearchParams();
+  const { data, isLoading, isError } = useGetItems();
 
+  
   if (isLoading || !data) {
     return <Loader />;
   }
   if (isError) {
     return <div>Error</div>;
   }
+  const { results, next, previous, count } = data;
 
   return <>
-    {data.map((item) => (
+    {results.map((item) => (
       <ItemCard key={item.id} {...item} />
     ))}
-    <button onClick={() => console.log(SearchParamsToFilters(urlSearchParams))}>srlfsrf</button>
+    {/* <button onClick={() => console.log(SearchParamsToFilters(urlSearchParams))}>srlfsrf</button> */}
   </>;
 };
 

@@ -1,12 +1,12 @@
 import { Button } from "@/shared/ui";
 import cart from "@/shared/image/icons/addToCart.svg";
-import { ProductCardProps } from "@/pages/items/model/types";
-import { NavLink } from "react-router-dom";
+import { IProductCard } from "@/pages/items/model/types";
+import { Link } from "@tanstack/react-router";
 
-export function ItemCard(props: ProductCardProps) {
+export function ItemCard(props: IProductCard) {
   const { id, name, image, price, year, country } = props
   return (
-    <NavLink to={'/items/' + id} className='relative flex w-full flex-col rounded-xl bg-secondaryWhite'>
+    <Link to={'/items/' + id} className='relative flex w-full flex-col rounded-xl bg-secondaryWhite'>
       <p className="text-2xl px-6 py-1 absolute top-4 left-6 bg-[#32b055] rounded-lg text-secondaryWhite">UNC</p>
       <img className="w-full h-[250px]" src={image} alt='coin' />
       <div className='flex flex-col gap-6 px-8 pb-8 text-start'>
@@ -28,6 +28,6 @@ export function ItemCard(props: ProductCardProps) {
           <Button className="max-w-fit px-[17px] py-[7px] text-16 [&>img]:size-4" type="primary" text="add to cart" onClick={() => {}} icon={cart}></Button>
         </div>
       </div>
-    </NavLink>
+    </Link>
   );
 }

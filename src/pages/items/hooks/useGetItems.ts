@@ -3,9 +3,9 @@ import { getAllItems } from "../api/queries"
 
 
 
-export const useGetItems = (props: URLSearchParams) => {
+export const useGetItems = () => {
   return useQuery({
     queryKey: ['items'],
-    queryFn: () => getAllItems(props),
+    queryFn: () => getAllItems(),
   })
 }

@@ -1,13 +1,13 @@
-import { ProductCardProps } from "@/pages/items/model/types";
+import { IAllItems } from "@/pages/items/model/types";
 import { api } from "@/shared/api";
-import { SearchParamsToFilters } from "../helpers/searchParamsToFilters";
+// import { SearchParamsToFilters } from "../helpers/searchParamsToFilters";
 
 
 
-export const getAllItems = async (props: URLSearchParams): Promise<ProductCardProps[]> => {
+export const getAllItems = async (): Promise<IAllItems> => {
   try {
-    const queryParams = SearchParamsToFilters(props)
-    const allItems: ProductCardProps[] = await api.get(`products/${queryParams}`).then((res) => res.data);
+    // const queryParams = SearchParamsToFilters()
+    const allItems: IAllItems = await api.get(`products/`).then((res) => res.data);    
     return allItems;
   } catch (error) {
     console.error(error);
