@@ -28,7 +28,7 @@ export function Item() {
             <CustomSlider>{images.map((image: { image: string; display_order: number }) => image.image)}</CustomSlider>
           </div>
           <div className='flex w-full flex-col gap-8'>
-            <Link className="text-16 flex gap-2 leading-[125%]" to='.'>
+            <Link className="text-16 flex gap-2 leading-[125%]" to='/items'>
               <img className='w-[14px]' src={leftArrow} alt='arrow' />
               Back to shopping
             </Link>
@@ -60,7 +60,7 @@ export function Item() {
 
       <div className='flex flex-col gap-16'>
         <p className='text-32'>You may also like</p>
-        <div className='grid w-full grid-cols-3 gap-6'>
+        <div className='flex gap-5 max-w-full overflow-x-auto'>
           {recommendations.map((item: IProductCard) => (
             <ItemCard key={item.id} {...item} />
           ))}

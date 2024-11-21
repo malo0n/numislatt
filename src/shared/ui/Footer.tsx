@@ -4,56 +4,44 @@ import logo from "@/shared/image/icons/logoWhite.svg";
 
 export function Footer() {
   return (
-    <footer className="h-[429px] px-[108px] py-16 bg-mainBlack flex justify-between text-secondaryWhite">
-      <div className="h-full flex flex-col justify-between gap-[7px]">
-        <Link to={routes.items_page} className="flex gap-[7px] items-center">
-          <img
-            className="w-[57px] border-secondaryWhite"
-            src={logo}
-            alt="logo"
-          />
-          <p className="font-habibi text-2xl text-[42px]">Numislatt</p>
+    <footer className='flex justify-between bg-mainBlack px-[112px] py-8 text-secondaryWhite'>
+      <div className='flex h-full w-full flex-col gap-[64px]'>
+        <Link to={routes.items_page} className='flex items-end gap-[7px]'>
+          <img className='w-[57px] border-secondaryWhite' src={logo} alt='logo' />
+          <p className='font-habibi text-[42px] leading-[125%]'>Numislat</p>
         </Link>
-        <div className="flex flex-col gap-1 text-secondaryWhite">
-          <p className="text-2xl opacity-50">Contact us</p>
-          <Link className={"text-[32px]"} to={"#"}>
-            Numislatt.store@gmail.com
-          </Link>
-        </div>
-      </div>
 
-      <div className="flex text-2xl gap-16">
-        <div className="flex flex-col gap-6">
-          <p className="opacity-50">About us</p>
-          <div className="flex flex-col gap-3">
-            <Link to={"#"}>
-              Offline store
-            </Link>
-            <Link to={"#"}>
-              Certification
-            </Link>
+        <div className='flex gap-16 text-24 leading-[100%]'>
+          <div className='flex flex-col gap-4'>
+            <p className='opacity-50'>Collections</p>
+            <Link to={"/items"} search={{ continent: "NA"}}>America</Link>
+            <Link to={"/items"} search={{ continent: "EU"}}>Europe</Link>
+            <Link to={"/items"} search={{ continent: "AF"}}>Africa</Link>
+            <Link to={"/items"} search={{ continent: "AS"}}>Asia</Link>
           </div>
-        </div>
-        <div className="flex flex-col gap-6">
-          <p className="opacity-50">Collections</p>
-          <div className="flex flex-col gap-3">
-            <Link to={"#"}>
-              America
-            </Link>
-            <Link to={"#"}>
-              Europe
-            </Link>
-            <Link to={"#"}>
-              Africa
-            </Link>
-            <Link to={"#"}>
-              Asia
-            </Link>
+          <div className='flex flex-col gap-4'>
+            <p className='opacity-50'>For customers</p>
+            <Link to={"."}>Return policy</Link>
+            <Link to={"."}>Delivery</Link>
+            <Link to={"."}>Contacts</Link>
           </div>
+          <div className='flex flex-col gap-4'>
+            <p className='opacity-50'>About us</p>
+            <Link to={"."}>Offline Store</Link>
+            <Link to={"."}>Certification</Link>
+          </div>
+          
+
         </div>
 
-        <div className="flex flex-col gap-[71px] w-fit items-end">
-          <p>©Numislatt. All rights reserved.</p>
+        <div className='flex w-full items-end justify-between'>
+          <div className='flex flex-col gap-1 text-secondaryWhite'>
+            <p className='text-2xl opacity-50'>Contact us</p>
+            <Link className='text-[32px]' to={"."}>
+              Numislatt.store@gmail.com
+            </Link>
+          </div>
+          <p className='text-16 text-secondaryWhite'>©Numislat. All rights reserved.</p>
         </div>
       </div>
     </footer>
