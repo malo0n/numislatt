@@ -1,5 +1,6 @@
 import { ItemsList } from '@/pages/items'
-import { AllItemsFilters, continents } from '@/pages/items/model/types'
+import { AllItemsFilters } from '@/pages/items/model/types'
+import { continents } from '@/shared/model/types'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/items/')({
@@ -8,8 +9,6 @@ export const Route = createFileRoute('/items/')({
     return {
       ...search,
       continent: search.continent ? (search.continent as continents) : undefined,
-      
-
     }
   },
 })

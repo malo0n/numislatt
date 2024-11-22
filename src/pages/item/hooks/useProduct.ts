@@ -1,7 +1,8 @@
 import { useQueries, UseQueryResult } from "@tanstack/react-query"
 import { getItem, getItemRecommendations } from "../api/queries"
 import { useCallback } from "react"
-import { IProductCard, IItem } from "../model/types"
+import { IItem } from "../model/types"
+import { IProductCard } from "@/shared/model/types"
 export const useProduct = (id: number) => {
   return useQueries({
     queries: [

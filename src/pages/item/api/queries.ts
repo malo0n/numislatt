@@ -1,6 +1,6 @@
 import { api } from "@/shared/api"
-import { IProductCard } from "@/pages/items/model/types";
 import { IItem } from "@/pages/item/model/types";
+import { IProductCard } from "@/shared/model/types";
 
 export const getItem = async (id: number): Promise<IItem> => {
   try {

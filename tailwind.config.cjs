@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  important: true,
+  // important: true,
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   darkMode: "class",
   theme: {

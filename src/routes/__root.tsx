@@ -1,5 +1,5 @@
 import { createRootRoute } from '@tanstack/react-router'
-import RootLayout from '@/pages/RootLayout';
+import RootLayout from '@/shared/ui/RootLayout';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { ScrollToTop } from '@/shared/helpers/ScrollToTop';
 
