@@ -1,9 +1,10 @@
-export function SearchParamsToFilters(searchParams: URLSearchParams): string {
-  const queryParams: string[] = [];
-  searchParams.forEach((value, key) => {
-    if (value) {
-      queryParams.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
-    }
-  });
-  return queryParams.length ? `?${queryParams.join("&")}` : "";
+import { AllItemsFilters } from "../model/types";
+
+export function SearchParamsToFilters(searchParams?: AllItemsFilters): string {
+  if(Object.entries(searchParams!).length === 0) return "";
+  const queryParams = Object.entries(searchParams!)
+    .filter(([, value]) => value !== undefined && value !== null)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`);
+
+  return queryParams.length ? `${queryParams.join("&")}` : "";
 }
