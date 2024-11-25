@@ -18,11 +18,11 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        12: ["12px", { fontWeight: 500 }],
-        16: ["16px", { fontWeight: 500 }],
-        24: ["24px", { fontWeight: 500 }],
-        32: ["32px", { fontWeight: 500 }],
-        40: ["40px", { fontWeight: 500 }],
+        12: ["12px", { fontWeight: 500, lineHeight: "125%" }],
+        16: ["16px", { fontWeight: 500, lineHeight: "125%" }],
+        24: ["24px", { fontWeight: 500, lineHeight: "125%" }],
+        32: ["32px", { fontWeight: 500, lineHeight: "125%" }],
+        40: ["40px", { fontWeight: 500, lineHeight: "125%" }],
       },
     },
     colors: {

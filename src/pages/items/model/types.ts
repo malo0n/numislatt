@@ -13,7 +13,7 @@ export interface AllItemsFilters {
   grade?: grades;
   limit?: number;
   offset?: number;
-  ordering?: string;
+  ordering?: 'price' | '-price';
   price_max?: number;
   price_min?: number;
   search?: string;

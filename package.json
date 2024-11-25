@@ -32,6 +32,8 @@
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
+    "react-hook-form": "^7.53.2",
+    "react-range": "^1.10.0",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.5",
     "steiger": "^0.4.0",
