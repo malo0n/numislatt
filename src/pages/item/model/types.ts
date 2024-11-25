@@ -1,4 +1,4 @@
-import { countries, continents } from "@/shared/model/types";
+import { countries, continents } from "@/shared/types/types";
 
 export interface CarouselIndicatorsProps {
   images: string[];

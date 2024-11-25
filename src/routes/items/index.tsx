@@ -1,6 +1,6 @@
 import { ItemsList } from '@/pages/items'
 import { AllItemsFilters } from '@/pages/items/model/types'
-import { continents } from '@/shared/model/types'
+import { continents } from '@/shared/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/items/')({

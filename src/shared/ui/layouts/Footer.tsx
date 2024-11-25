@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { routes } from "../lib";
+import { routes } from "../../lib";
 import logo from "@/shared/image/icons/logoWhite.svg";
 
 export function Footer() {

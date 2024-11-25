@@ -5,7 +5,7 @@ import { Button, Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
 import { useProduct } from "../hooks/useProduct";
 import { getRouteApi } from '@tanstack/react-router'
-import { IProductCard } from "@/shared/model/types";
+import { ProductCardProps } from "@/shared/types/props";
 import { useDeviceWidth } from "@/shared/hooks/useDeviceWidth";
 
 const route = getRouteApi('/items/$itemId')
@@ -66,7 +66,7 @@ export function Item() {
       <div className='flex flex-col gap-[10px] lg:gap-16'>
         <p className='text-24 lg:text-32'>You may also like</p>
         <div className='flex gap-5 max-w-full overflow-x-auto'>
-          {recommendations.map((item: IProductCard) => (
+          {recommendations.map((item: ProductCardProps) => (
             <ItemCard key={item.id} {...item} />
           ))}
         </div>

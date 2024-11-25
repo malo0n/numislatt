@@ -1,6 +1,6 @@
 import { api } from "@/shared/api"
 import { IItem } from "@/pages/item/model/types";
-import { IProductCard } from "@/shared/model/types";
+import { ProductCardProps } from "@/shared/types/types";
 
 export const getItem = async (id: number): Promise<IItem> => {
   try {
@@ -11,9 +11,9 @@ export const getItem = async (id: number): Promise<IItem> => {
     throw new Error('Failed to fetch product');
   }
 }
-export const getItemRecommendations = async (id: number): Promise<IProductCard[]> => {
+export const getItemRecommendations = async (id: number): Promise<ProductCardProps[]> => {
   try {
-    const itemRecommendations: IProductCard[] = await api.get(`products/${id}/recomendations/`).then((res) => res.data);
+    const itemRecommendations: ProductCardProps[] = await api.get(`products/${id}/recomendations/`).then((res) => res.data);
     return itemRecommendations;
   } catch (error) {
     console.error(error);

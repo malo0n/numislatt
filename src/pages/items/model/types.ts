@@ -1,10 +1,11 @@
-import { continents, countries, grades, IProductCard } from "@/shared/model/types";
+import { ProductCardProps } from "@/shared/model";
+import { continents, countries, grades } from "@/shared/types/types";
 
 export interface IAllItems {
   count: number;
   next: string;
   previous: string;
-  results: IProductCard[]
+  results: ProductCardProps[]
 }
 
 export interface AllItemsFilters {

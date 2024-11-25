@@ -4,7 +4,7 @@ import { useGetInfiniteItems } from "../hooks/useGetItems";
 import { Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
 import { getRouteApi } from "@tanstack/react-router";
-import FiltersComponent from "./FiltersComponent";
+import FiltersComponent from "../../../widgets/FiltersComponent";
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 
