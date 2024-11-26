@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "@tanstack/react-router";
-import { Range, getTrackBackground } from "react-range";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { AllItemsFilters } from "../pages/items/model/types";
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
 import checkedRadio from "@/shared/image/icons/checkedRadio.svg";
 import emptyRadio from "@/shared/image/icons/EmptyRadio.svg";
-import checkedCheckbox from "@/shared/image/icons/checkedCheckbox.svg";
-import emptyCheckbox from "@/shared/image/icons/emptyCheckbox.svg";
-import { Button, SliderFilter } from "@/shared/ui";
 
-const FiltersComponent = () => {
+import { Button, SliderFilter } from "@/shared/ui";
+import { continents } from "@/shared/model/const";
+import { handleContinentName } from "@/shared/helpers/handleContinentName";
+import { Checkbox } from "@/shared/ui/Checkbox";
+import { FilterComponentProps } from "@/shared/types/props";
+
+const FiltersComponent = (props: FilterComponentProps) => {
+  const {countries}  = props
   const [isSortOpen, setIsSortOpen] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
-  const [isContinentOpen, setIsContinentOpen] = useState(false);
-  const [isCountryOpen, setIsCountryOpen] = useState(false);
+  const [isContinentOpen, setIsContinentOpen] = useState(true);
+  const [isCountryOpen, setIsCountryOpen] = useState(true);
   const methods = useForm<AllItemsFilters>();
   const navigate = useNavigate();
   const order = useWatch({ name: "ordering", control: methods.control });
@@ -59,7 +62,7 @@ const FiltersComponent = () => {
             />
             <h3 className='text-24'>Sort by</h3>
           </div>
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {isSortOpen && (
               <motion.div
                 initial={{ height: 0 }}
@@ -81,6 +84,7 @@ const FiltersComponent = () => {
                     <img
                       src={`${order === value || (value === "default" && order == undefined) ? checkedRadio : emptyRadio}`}
                       alt='radioSortButton'
+                      className='transition-all duration-200 ease-in-out'
                     />
                     {value === "default"
                       ? "Default"
@@ -108,13 +112,13 @@ const FiltersComponent = () => {
             />
             <h3 className='text-24'>Filters</h3>
           </div>
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {isFiltersOpen && (
               <motion.div
                 initial={{ height: 0 }}
                 animate={{ height: "auto" }}
                 exit={{ height: 0 }}
-                className='flex flex-col gap-4 overflow-y-hidden'
+                className='flex max-h-[350px] flex-col gap-4 overflow-y-auto'
               >
                 <div className='min-h-2'></div>
                 {/* <div className='mb-4 flex flex-col gap-2'>
@@ -148,12 +152,10 @@ const FiltersComponent = () => {
                   <SliderFilter names={["year_min", "year_max"]} minValue={1800} maxValue={2023} step={1} />
                 </div>
 
-                {/* Continent Filter */}
-                <div className='mb-4'>
-                  <div
-                    className='flex cursor-pointer gap-1'
-                    onClick={() => toggleSection(setIsContinentOpen)}
-                  >
+                <p className='text-16 text-mainBlack text-opacity-50'>Location</p>
+
+                <div className='mb-4 flex flex-col gap-2'>
+                  <div className='flex cursor-pointer gap-1' onClick={() => toggleSection(setIsContinentOpen)}>
                     <img
                       src={filterArrow}
                       className={`${isContinentOpen ? "" : "rotate-180"} min-w-4 self-center`}
@@ -161,60 +163,42 @@ const FiltersComponent = () => {
                     />
                     <h4 className='text-16 text-mainBlack'>Continent</h4>
                   </div>
-                  <AnimatePresence>
+                  <AnimatePresence initial={false}>
                     {isContinentOpen && (
                       <motion.div
                         initial={{ height: 0 }}
                         animate={{ height: "auto" }}
                         exit={{ height: 0 }}
-                        className='overflow-hidden flex flex-col gap-2 text-16'
+                        className='flex flex-col gap-2 overflow-hidden text-16'
                       >
-                        <label>
-                          <input type='checkbox' name='continent' value='europe' />
-                          Europe
-                        </label>
-                        <label>
-                          <input type='checkbox' name='continent' value='asia' />
-                          Asia
-                        </label>
-                        <label>
-                          <input type='checkbox' name='continent' value='north-america' />
-                          North America
-                        </label>
-                        <label>
-                          <input type='checkbox' name='continent' value='south-america' />
-                          South America
-                        </label>
+                        {continents.map((continentName) => (
+                          <Checkbox name="continent" key={continentName} value={continentName} isChecked={continent ? continent.includes(continentName) : false} text={handleContinentName(continentName)}/>
+                        ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
 
-                {/* Country Filter */}
-                <div className='mb-4'>
-                  <div
-                    className='flex cursor-pointer items-center justify-between'
-                    onClick={() => toggleSection(setIsCountryOpen)}
-                  >
-                    <h4 className='font-semibold'>Country</h4>
-                    <span>{isCountryOpen ? "▲" : "▼"}</span>
+                <div className='mb-4 flex flex-col gap-2'>
+                  <div className='flex cursor-pointer gap-1' onClick={() => toggleSection(setIsCountryOpen)}>
+                    <img
+                      src={filterArrow}
+                      className={`${isCountryOpen ? "" : "rotate-180"} min-w-4 self-center`}
+                      alt='filterArrow'
+                    />
+                    <h4 className='text-16 text-mainBlack'>Country</h4>
                   </div>
-                  <AnimatePresence>
+                  <AnimatePresence initial={false}>
                     {isCountryOpen && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className='overflow-hidden pl-4'
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        className='flex flex-col gap-2 overflow-hidden text-16'
                       >
-                        <label>
-                          <input type='checkbox' name='country' value='france' />
-                          France
-                        </label>
-                        <label>
-                          <input type='checkbox' name='country' value='italy' />
-                          Italy
-                        </label>
+                        {countries.map((singleCountry) => (
+                          <Checkbox name="country" key={singleCountry.iso} value={singleCountry.iso} isChecked={country ? country.includes(singleCountry.iso) : false} text={singleCountry.name}/>
+                        ))}
                       </motion.div>
                     )}
                   </AnimatePresence>

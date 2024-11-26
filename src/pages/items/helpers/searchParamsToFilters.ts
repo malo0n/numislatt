@@ -2,9 +2,14 @@ import { AllItemsFilters } from "../model/types";
 
 export function SearchParamsToFilters(searchParams?: AllItemsFilters): string {
   if(Object.entries(searchParams!).length === 0) return "";
-  const queryParams = Object.entries(searchParams!)
-    .filter(([, value]) => value !== undefined && value !== null)
-    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`);
+  const queryParams = Object.entries(searchParams!).flatMap(([key, value]) => {
+    if (Array.isArray(value)) {
+      return value.map((item) => `${encodeURIComponent(key)}=${encodeURIComponent(String(item))}`);
+    }
+
+    return `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`;
+  });
 
   return queryParams.length ? `${queryParams.join("&")}` : "";
 }
+

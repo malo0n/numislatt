@@ -1,8 +1,8 @@
-import { countries, fullContinents } from "./types";
+import { continents, countries, fullContinents, IAllCountries } from "./types";
 
 export interface buttonProps {
   text?: string;
-  type?: 'primary' | 'secondary';
+  type?: "primary" | "secondary";
   icon?: string;
   className?: string;
   onClick?: () => void;
@@ -14,7 +14,7 @@ export interface ProductCardProps {
   image: {
     image: string;
     display_order: number;
-  }
+  };
   grade: {
     code: string;
     name: string;
@@ -38,10 +38,21 @@ export interface FadeComponentProps {
   children: React.ReactNode;
 }
 
-
 export interface SliderFilterProps {
   minValue: number;
   maxValue: number;
   step: number;
-  names: ['year_min', 'year_max'] | ['price_min', 'price_max'];
+  names: ["year_min", "year_max"] | ["price_min", "price_max"];
 }
+
+export interface checkboxProps<T extends continents | countries> {
+  value: T;
+  isChecked: boolean;
+  text: string;
+  name: "continent" | "country";
+}
+
+export interface FilterComponentProps {
+  countries: IAllCountries[];
+}
+

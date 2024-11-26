@@ -9,9 +9,9 @@ export interface IAllItems {
 }
 
 export interface AllItemsFilters {
-  continent?: continents;
-  country?: countries;
-  grade?: grades;
+  continent?: continents[];
+  country?: countries[];
+  grade?: grades[];
   limit?: number;
   offset?: number;
   ordering?: 'price' | '-price';
