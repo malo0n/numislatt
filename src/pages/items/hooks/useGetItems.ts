@@ -12,10 +12,10 @@ export const useGetInfiniteItems = (searchParams: AllItemsFilters) => {
     queryFn: (pageParam) => getAllItems(pageParam, searchParams),
     initialPageParam: `offset=0&limit=${pageLimit}`,
     getNextPageParam: (lastPage) => {
-      return lastPage.next ? lastPage.next.replace(`${baseUrl}products/?`, '') : ''
+      return lastPage.next ? lastPage.next.replace(`${baseUrl}products/?`, '') : null
     },
     getPreviousPageParam: (lastPage) => {
-      return lastPage.previous ? lastPage.previous.replace(`${baseUrl}products/?`, '') : ''
+      return lastPage.previous ? lastPage.previous.replace(`${baseUrl}products/?`, '') : null
     },
     maxPages: 3,
     
