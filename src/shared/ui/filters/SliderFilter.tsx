@@ -15,7 +15,7 @@ export const SliderFilter = (props: SliderFilterProps) => {
     setValue(names[1], range[1]);
   },[range, names, setValue])
   return (
-    <>
+    <div className="flex flex-col gap-2">
       <Range
         values={range}
         step={step}
@@ -31,7 +31,7 @@ export const SliderFilter = (props: SliderFilterProps) => {
             style={{
               ...props.style,
               height: "4px",
-              width: "100%",
+              maxWidth: "100%",
               background: getTrackBackground({
                 values: range,
                 colors: ["#EAEAEA", "#EED40F", "#EAEAEA"],
@@ -39,7 +39,7 @@ export const SliderFilter = (props: SliderFilterProps) => {
                 max: maxValue,
               }),
             }}
-            className='rounded-full'
+            className='rounded-full mx-2'
           >
             {children}
           </div>
@@ -61,6 +61,6 @@ export const SliderFilter = (props: SliderFilterProps) => {
         <span>{range[0]}</span>
         <span>{range[1]}</span>
       </div>
-    </>
+    </div>
   );
 };

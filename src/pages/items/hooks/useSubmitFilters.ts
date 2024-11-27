@@ -9,7 +9,6 @@ export const useSubmitFilters = () => {
     navigate({
       to: ".",
       search: {
-        ...data,
         search: data.search || undefined,
         country: data.country || undefined,
         continent: data.continent ||  undefined,
@@ -18,6 +17,7 @@ export const useSubmitFilters = () => {
         price_max: data.price_max || undefined,
         year_min: data.year_min || undefined,
         year_max: data.year_max || undefined,
+        grade: data.grade || undefined
       },
     });
   }

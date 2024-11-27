@@ -9,7 +9,7 @@ export function Button(props: buttonProps) {
       className={`${className} flex w-full min-w-fit items-center justify-center gap-3 rounded-lg hover:bg-secondaryYellow transition-all bg-mainYellow px-3 lg:px-6 py-4 text-16 leading-[125%] h-fit text-mainBlack`}
     >
       {icon && <img className='w-8' src={icon} alt='icon'></img>}
-      <p>{text}</p>
+      {text && <p>{text}</p>}
     </button>
   ) : (
     <button

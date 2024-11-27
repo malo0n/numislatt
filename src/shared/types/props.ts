@@ -1,4 +1,4 @@
-import { continents, countries, fullContinents, IAllCountries } from "./types";
+import { continents, countries, fullContinents, grades, IAllCountries } from "./types";
 
 export interface buttonProps {
   text?: string;
@@ -45,11 +45,11 @@ export interface SliderFilterProps {
   names: ["year_min", "year_max"] | ["price_min", "price_max"];
 }
 
-export interface checkboxProps<T extends continents | countries> {
+export interface checkboxProps<T extends continents | countries | grades> {
   value: T;
   isChecked: boolean;
   text: string;
-  name: "continent" | "country";
+  name: "continent" | "country" | "grade";
 }
 
 export interface FilterComponentProps {
