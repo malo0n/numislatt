@@ -10,3 +10,9 @@ export const grades: GradesType[] = ['F' , 'FR' , 'G' , 'PR' , 'UNC' , 'VF' , 'V
 
 
 export const pageLimit = 20
+
+export const sortOptions = {
+  'default': "Default",
+  'price': "From lowest to highest",
+  "-price": "From highest to lowest"
+}

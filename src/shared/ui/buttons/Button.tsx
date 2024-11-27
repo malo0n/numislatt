@@ -1,8 +1,8 @@
 // import { routes } from "@/shared/lib";
-import { buttonProps } from "../model";
+import { buttonProps } from "../../model";
 
 export function Button(props: buttonProps) {
-  const { text, type, icon, onClick, className } = props;
+  const { text, type, icon, onClick, className} = props;
   return type === "primary" ? (
     <button
       onClick={onClick}

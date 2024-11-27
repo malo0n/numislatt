@@ -1,4 +1,4 @@
-import { ItemsList } from "@/pages/items";
+import { ItemsList } from "@/pages";
 import { AllItemsFilters } from "@/pages/items/model/types";
 import { createFileRoute } from "@tanstack/react-router";
 

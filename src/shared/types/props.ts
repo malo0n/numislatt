@@ -56,3 +56,8 @@ export interface FilterComponentProps {
   countries: IAllCountries[];
 }
 
+export interface RadioButtonProps {
+  value: "price" | "-price" | "default";
+  name: "ordering";
+  label: string;
+}

@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { CustomSlider } from "./CustomSlider";
+import { CustomSlider } from "./ui/CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
 import { Button, Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
-import { useProduct } from "../hooks/useProduct";
+import { useProduct } from "./hooks/useProduct";
 import { getRouteApi } from '@tanstack/react-router'
 import { ProductCardProps } from "@/shared/types/props";
 import { useDeviceWidth } from "@/shared/hooks/useDeviceWidth";
