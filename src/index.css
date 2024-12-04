@@ -6,10 +6,8 @@
   margin: 0;
   padding: 0;
   outline: 0;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
   transition: all;
 }
-
-

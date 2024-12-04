@@ -10,7 +10,8 @@ import { useGetAllItemsFilters } from "../hooks/useGetAllItemsFilters";
 
 export const Items = () => {
   const searchParams = useGetAllItemsFilters();
-  const { data, isLoading, isError, fetchNextPage, isFetchingNextPage, hasNextPage } = useGetInfiniteItems(searchParams);
+  const { data, isLoading, isError, fetchNextPage, isFetchingNextPage, hasNextPage } =
+    useGetInfiniteItems(searchParams);
   const { data: countries, isLoading: isLoadingCountries, isError: isErrorCountries } = useGetCountries();
   const deviceWidth = useDeviceWidth();
   const { ref, inView } = useInView();

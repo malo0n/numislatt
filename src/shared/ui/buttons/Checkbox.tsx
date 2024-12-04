@@ -5,10 +5,9 @@ import checkedCheckbox from "@/shared/image/icons/checkedCheckbox.svg";
 import emptyCheckbox from "@/shared/image/icons/emptyCheckbox.svg";
 import { continents, countries, grades } from "../../model";
 
-
 export const Checkbox = <T extends countries | continents | grades>(props: checkboxProps<T>) => {
-  const { value, isChecked, text, name  } = props
-  const {register} = useFormContext<AllItemsFilters>();
+  const { value, isChecked, text, name } = props;
+  const { register } = useFormContext<AllItemsFilters>();
 
   return (
     <label key={value} className='flex gap-1 hover:cursor-pointer'>

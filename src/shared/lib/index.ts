@@ -1,1 +1,1 @@
-export {routes} from './routing'
+export { routes } from "./routing";

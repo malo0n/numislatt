@@ -27,7 +27,7 @@ const router = createRouter({
   },
   defaultPreload: "intent",
   defaultPreloadStaleTime: 0,
-  defaultNotFoundComponent: NotFound
+  defaultNotFoundComponent: NotFound,
 });
 
 declare module "@tanstack/react-router" {

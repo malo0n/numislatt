@@ -8,7 +8,7 @@ import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters
 export const RadioButton = (props: RadioButtonProps) => {
   const { value, label, name } = props;
   const { register, setValue, resetField, control } = useFormContext<AllItemsFilters>();
-  const searchParams = useGetAllItemsFilters()
+  const searchParams = useGetAllItemsFilters();
   const order = useWatch({ name: name, control: control, defaultValue: searchParams[name] });
 
   return (
@@ -18,7 +18,14 @@ export const RadioButton = (props: RadioButtonProps) => {
       htmlFor={value}
       onClick={() => (value === "default" ? resetField(name) : setValue(name, value as "price" | "-price"))}
     >
-      <input {...register(name)} defaultChecked={value === order} type='radio' id={value} value={value} className='hidden' />
+      <input
+        {...register(name)}
+        defaultChecked={value === order}
+        type='radio'
+        id={value}
+        value={value}
+        className='hidden'
+      />
       <img
         src={`${order === value || (value === "default" && order == undefined) ? checkedRadio : emptyRadio}`}
         alt='radioSortButton'

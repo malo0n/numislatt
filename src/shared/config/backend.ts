@@ -1,1 +1,1 @@
-export const baseUrl = 'https://numislat.onrender.com/api/'
+export const baseUrl = "https://numislat.onrender.com/api/";

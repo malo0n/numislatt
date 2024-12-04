@@ -24,8 +24,7 @@ const FiltersComponent = (props: FilterComponentProps) => {
   const searchParams = useGetAllItemsFilters();
   useEffect(() => {
     console.log(searchParams, searchParams.continent);
-    
-  }, [searchParams])
+  }, [searchParams]);
   const grade = useWatch({ name: "grade", control: methods.control, defaultValue: searchParams.grade });
   const continent = useWatch({ name: "continent", control: methods.control, defaultValue: searchParams.continent });
   const country = useWatch({ name: "country", control: methods.control, defaultValue: searchParams.country });
@@ -67,7 +66,7 @@ const FiltersComponent = (props: FilterComponentProps) => {
           onClick={() => {
             toggleSection(setIsFiltersOpen);
           }}
-          className='flex w-full justify-between hover:cursor-pointer p-4'
+          className='flex w-full justify-between p-4 hover:cursor-pointer'
         >
           <div className='flex items-start gap-[10px]'>
             <img
@@ -86,10 +85,10 @@ const FiltersComponent = (props: FilterComponentProps) => {
               initial={{ height: 0 }}
               animate={{ height: "auto" }}
               exit={{ height: 0 }}
-              className=' overflow-y-auto relative'
+              className='relative overflow-y-auto'
             >
-              <div className="flex max-h-[350px] flex-col gap-4 overflow-y-auto relative px-4 pb-4">                
-                <div className=' flex flex-col gap-2'>
+              <div className='relative flex max-h-[350px] flex-col gap-4 overflow-y-auto px-4 pb-4'>
+                <div className='flex flex-col gap-2'>
                   <div className='flex cursor-pointer gap-1' onClick={() => toggleSection(setIsGradeOpen)}>
                     <img
                       src={filterArrow}
@@ -119,7 +118,7 @@ const FiltersComponent = (props: FilterComponentProps) => {
                     )}
                   </AnimatePresence>
                 </div>
-                
+
                 <div className='relative flex flex-col gap-2'>
                   <h4 className='text-16 text-mainBlack text-opacity-50'>Price (€)</h4>
                   <SliderFilter names={["price_min", "price_max"]} minValue={0} maxValue={200} step={0.1} />
@@ -128,12 +127,12 @@ const FiltersComponent = (props: FilterComponentProps) => {
                   <h4 className='text-16 text-mainBlack text-opacity-50'>Year</h4>
                   <SliderFilter names={["year_min", "year_max"]} minValue={1800} maxValue={2023} step={1} />
                 </div>
-                
+
                 <div className='flex flex-col gap-2'>
                   <p className='text-16 text-mainBlack text-opacity-50'>Location</p>
-                
+
                   <div className='flex flex-col gap-4'>
-                    <div className=' flex flex-col gap-2'>
+                    <div className='flex flex-col gap-2'>
                       <div className='flex cursor-pointer gap-1' onClick={() => toggleSection(setIsContinentOpen)}>
                         <img
                           src={filterArrow}
@@ -163,7 +162,7 @@ const FiltersComponent = (props: FilterComponentProps) => {
                         )}
                       </AnimatePresence>
                     </div>
-                
+
                     <div className='flex flex-col gap-2'>
                       <div className='flex cursor-pointer gap-1' onClick={() => toggleSection(setIsCountryOpen)}>
                         <img
@@ -197,8 +196,8 @@ const FiltersComponent = (props: FilterComponentProps) => {
                   </div>
                 </div>
               </div>
-              <div className="py-3 px-4 relative">
-                <span className='block min-h-[1px] w-full bg-tetriaryBlack absolute top-0 left-0'></span>
+              <div className='relative px-4 py-3'>
+                <span className='absolute left-0 top-0 block min-h-[1px] w-full bg-tetriaryBlack'></span>
                 <Button className='max-w-full py-[10px]' type='primary' text='Apply changes' />
               </div>
             </motion.div>

@@ -5,23 +5,31 @@ import mainCoins from "@/shared/image/mainCoins.webp";
 import { useGetAllItemsFilters } from "../hooks/useGetAllItemsFilters";
 import searchIcon from "@/shared/image/icons/searchIcon.svg";
 
-
-
 export const SearchHeader = () => {
-  const searchParams = useGetAllItemsFilters()
+  const searchParams = useGetAllItemsFilters();
   const methods = useFormContext<AllItemsFilters>();
   const { register } = methods;
   return (
     <section
       style={{ backgroundImage: `url(${mainCoins})` }}
-      className='flex w-full flex-col items-center gap-6 bg-cover p-4 lg:gap-16 h-[316px] bg-center  lg:h-[504px] justify-center'
+      className='flex h-[316px] w-full flex-col items-center justify-center gap-6 bg-cover bg-center p-4 lg:h-[504px] lg:gap-16'
     >
-      <h1 className='font-montserrat text-32 font-bold leading-[125%] lg:text-[64px] text-center text-mainWhite '>
+      <h1 className='text-center font-montserrat text-32 font-bold leading-[125%] text-mainWhite lg:text-[64px]'>
         Choose rare items from the&nbsp;biggest collection
       </h1>
-      <div className='relative w-full lg:max-w-[848px] bg-[#fff] lg:px-4 px-2 lg:py-[10px] py-2 border-[2px] rounded-lg border-[#D7D7D7] flex '>
-        <input className="w-full placeholder:text-16 placeholder:text-secondaryBlack placeholder:leading-[125%]" placeholder="Find anything you wish"  {...register("search")} defaultValue={searchParams.search || undefined } type='text' />
-        <Button className="max-w-8 lg:max-w-[64px] rounded-[4px] !p-2 h-8 [&>img]:w-4" icon={searchIcon} type='primary'></Button>
+      <div className='relative flex w-full rounded-lg border-[2px] border-[#D7D7D7] bg-[#fff] px-2 py-2 lg:max-w-[848px] lg:px-4 lg:py-[10px]'>
+        <input
+          className='w-full placeholder:text-16 placeholder:leading-[125%] placeholder:text-secondaryBlack'
+          placeholder='Find anything you wish'
+          {...register("search")}
+          defaultValue={searchParams.search || undefined}
+          type='text'
+        />
+        <Button
+          className='h-8 max-w-8 rounded-[4px] !p-2 lg:max-w-[64px] [&>img]:w-4'
+          icon={searchIcon}
+          type='primary'
+        ></Button>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ export interface IAllItems {
   count: number;
   next: string;
   previous: string;
-  results: ProductCardProps[]
+  results: ProductCardProps[];
 }
 
 export interface AllItemsFilters {
@@ -14,7 +14,7 @@ export interface AllItemsFilters {
   grade?: grades[];
   limit?: number;
   offset?: number;
-  ordering?: 'price' | '-price';
+  ordering?: "price" | "-price";
   price_max?: number;
   price_min?: number;
   search?: string;

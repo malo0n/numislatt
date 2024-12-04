@@ -4,11 +4,10 @@ import { AllItemsFilters } from "./model/types";
 import { useSubmitFilters } from "./hooks/useSubmitFilters";
 import { Items } from "./ui/Items";
 
-
 export const ItemsList = () => {
   const methods = useForm<AllItemsFilters>();
   const { handleSubmit } = methods;
-  const onSubmit = useSubmitFilters()
+  const onSubmit = useSubmitFilters();
   return (
     <FormProvider {...methods}>
       <form
@@ -17,8 +16,8 @@ export const ItemsList = () => {
         onSubmit={handleSubmit(onSubmit)}
         className='flex min-h-screen flex-col items-center gap-[94px]'
       >
-        <SearchHeader/>
-        <Items/>
+        <SearchHeader />
+        <Items />
       </form>
     </FormProvider>
   );

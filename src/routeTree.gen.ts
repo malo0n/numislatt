@@ -10,103 +10,101 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as LayoutImport } from './routes/_layout'
-import { Route as ItemsIndexImport } from './routes/items/index'
-import { Route as ItemsItemIdImport } from './routes/items/$itemId'
+import { Route as rootRoute } from "./routes/__root";
+import { Route as LayoutImport } from "./routes/_layout";
+import { Route as ItemsIndexImport } from "./routes/items/index";
+import { Route as ItemsItemIdImport } from "./routes/items/$itemId";
 
 // Create/Update Routes
 
 const LayoutRoute = LayoutImport.update({
-  id: '/_layout',
+  id: "/_layout",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const ItemsIndexRoute = ItemsIndexImport.update({
-  id: '/items/',
-  path: '/items/',
+  id: "/items/",
+  path: "/items/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const ItemsItemIdRoute = ItemsItemIdImport.update({
-  id: '/items/$itemId',
-  path: '/items/$itemId',
+  id: "/items/$itemId",
+  path: "/items/$itemId",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/_layout': {
-      id: '/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof LayoutImport
-      parentRoute: typeof rootRoute
-    }
-    '/items/$itemId': {
-      id: '/items/$itemId'
-      path: '/items/$itemId'
-      fullPath: '/items/$itemId'
-      preLoaderRoute: typeof ItemsItemIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/items/': {
-      id: '/items/'
-      path: '/items'
-      fullPath: '/items'
-      preLoaderRoute: typeof ItemsIndexImport
-      parentRoute: typeof rootRoute
-    }
+    "/_layout": {
+      id: "/_layout";
+      path: "";
+      fullPath: "";
+      preLoaderRoute: typeof LayoutImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/items/$itemId": {
+      id: "/items/$itemId";
+      path: "/items/$itemId";
+      fullPath: "/items/$itemId";
+      preLoaderRoute: typeof ItemsItemIdImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/items/": {
+      id: "/items/";
+      path: "/items";
+      fullPath: "/items";
+      preLoaderRoute: typeof ItemsIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '': typeof LayoutRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/items': typeof ItemsIndexRoute
+  "": typeof LayoutRoute;
+  "/items/$itemId": typeof ItemsItemIdRoute;
+  "/items": typeof ItemsIndexRoute;
 }
 
 export interface FileRoutesByTo {
-  '': typeof LayoutRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/items': typeof ItemsIndexRoute
+  "": typeof LayoutRoute;
+  "/items/$itemId": typeof ItemsItemIdRoute;
+  "/items": typeof ItemsIndexRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/_layout': typeof LayoutRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/items/': typeof ItemsIndexRoute
+  __root__: typeof rootRoute;
+  "/_layout": typeof LayoutRoute;
+  "/items/$itemId": typeof ItemsItemIdRoute;
+  "/items/": typeof ItemsIndexRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/items/$itemId' | '/items'
-  fileRoutesByTo: FileRoutesByTo
-  to: '' | '/items/$itemId' | '/items'
-  id: '__root__' | '/_layout' | '/items/$itemId' | '/items/'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "" | "/items/$itemId" | "/items";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "" | "/items/$itemId" | "/items";
+  id: "__root__" | "/_layout" | "/items/$itemId" | "/items/";
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  LayoutRoute: typeof LayoutRoute
-  ItemsItemIdRoute: typeof ItemsItemIdRoute
-  ItemsIndexRoute: typeof ItemsIndexRoute
+  LayoutRoute: typeof LayoutRoute;
+  ItemsItemIdRoute: typeof ItemsItemIdRoute;
+  ItemsIndexRoute: typeof ItemsIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   LayoutRoute: LayoutRoute,
   ItemsItemIdRoute: ItemsItemIdRoute,
   ItemsIndexRoute: ItemsIndexRoute,
-}
+};
 
-export const routeTree = rootRoute
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {

@@ -6,22 +6,21 @@ import { useFormContext } from "react-hook-form";
 import { Range, getTrackBackground } from "react-range";
 
 export const SliderFilter = (props: SliderFilterProps) => {
-  const searchParams = useGetAllItemsFilters()
+  const searchParams = useGetAllItemsFilters();
   const { minValue, maxValue, step, names } = props;
   const [range, setRange] = useState([searchParams[names[0]] || minValue, searchParams[names[1]] || maxValue]);
   const { setValue } = useFormContext<AllItemsFilters>();
   useEffect(() => {
     setValue(names[0], range[0]);
     setValue(names[1], range[1]);
-  },[range, names, setValue])
+  }, [range, names, setValue]);
   return (
-    <div className="flex flex-col gap-2">
+    <div className='flex flex-col gap-2'>
       <Range
         values={range}
         step={step}
         min={minValue}
         max={maxValue}
-        
         onChange={(values) => {
           setRange(values);
         }}
@@ -39,7 +38,7 @@ export const SliderFilter = (props: SliderFilterProps) => {
                 max: maxValue,
               }),
             }}
-            className='rounded-full mx-2'
+            className='mx-2 rounded-full'
           >
             {children}
           </div>

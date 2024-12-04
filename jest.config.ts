@@ -1,10 +1,10 @@
 export default {
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    "^.+\\.tsx?$": "ts-jest",
   },
   moduleNameMapper: {
-    '\\.(css|less|scss)$': 'identity-obj-proxy',
+    "\\.(css|less|scss)$": "identity-obj-proxy",
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };
