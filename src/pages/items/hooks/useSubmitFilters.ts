@@ -4,8 +4,6 @@ import { AllItemsFilters } from "../model/types";
 export const useSubmitFilters = () => {
   const navigate = useNavigate();
   return (data: AllItemsFilters) => {
-    console.log(data);
-    
     navigate({
       to: ".",
       search: {

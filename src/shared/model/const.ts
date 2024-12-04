@@ -9,7 +9,7 @@ export const countries: CountriesType[] = ['AD', 'AE', 'AF', 'AG', 'AI', 'AL', '
 export const grades: GradesType[] = ['UNC', 'XF', 'VF', 'F', 'VG', 'G', 'FR', 'PR']
 
 
-export const pageLimit = 20
+export const pageLimit = 24
 
 export const sortOptions = {
   'default': "Default",
