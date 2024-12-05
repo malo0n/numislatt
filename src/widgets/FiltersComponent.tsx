@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFormContext, useWatch } from "react-hook-form";
 import { AllItemsFilters } from "../pages/items/model/types";
@@ -13,7 +13,7 @@ import { RadioButton } from "@/shared/ui/buttons/RadioButton";
 import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
 import { filterCounter } from "@/shared/helpers/filterCounter";
 
-const FiltersComponent = (props: FilterComponentProps) => {
+export const FiltersComponent = (props: FilterComponentProps) => {
   const { countries } = props;
   const [isSortOpen, setIsSortOpen] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
@@ -22,9 +22,6 @@ const FiltersComponent = (props: FilterComponentProps) => {
   const [isCountryOpen, setIsCountryOpen] = useState(true);
   const methods = useFormContext<AllItemsFilters>();
   const searchParams = useGetAllItemsFilters();
-  useEffect(() => {
-    console.log(searchParams, searchParams.continent);
-  }, [searchParams]);
   const grade = useWatch({ name: "grade", control: methods.control, defaultValue: searchParams.grade });
   const continent = useWatch({ name: "continent", control: methods.control, defaultValue: searchParams.continent });
   const country = useWatch({ name: "country", control: methods.control, defaultValue: searchParams.country });

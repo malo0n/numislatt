@@ -14,16 +14,16 @@ export function Footer() {
         <div className='flex flex-wrap gap-10 text-16 leading-[125%] lg:gap-16 lg:text-24'>
           <div className='flex flex-col gap-4'>
             <p className='opacity-50'>Collections</p>
-            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: "NA" }}>
+            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: ["NA"] }}>
               America
             </Link>
-            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: "EU" }}>
+            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: ["EU"] }}>
               Europe
             </Link>
-            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: "AF" }}>
+            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: ["AF"] }}>
               Africa
             </Link>
-            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: "AS" }}>
+            <Link to={"/items"} className='transition-all hover:opacity-85' search={{ continent: ["AS"] }}>
               Asia
             </Link>
           </div>

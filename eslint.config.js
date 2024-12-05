@@ -5,6 +5,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import pluginQuery from "@tanstack/eslint-plugin-query";
 import pluginRouter from "@tanstack/eslint-plugin-router";
+import jestDom from "eslint-plugin-jest-dom";
 
 export default tseslint.config({
   extends: [
@@ -12,9 +13,10 @@ export default tseslint.config({
     ...tseslint.configs.recommended,
     ...pluginQuery.configs["flat/recommended"],
     ...pluginRouter.configs["flat/recommended"],
+    jestDom.configs["flat/recommended"],
   ],
   files: ["**/*.{ts,tsx}"],
-  ignores: ["dist"],
+  ignores: ["dist", "node_modules", "coverage"],
   languageOptions: {
     ecmaVersion: 2020,
     globals: globals.browser,

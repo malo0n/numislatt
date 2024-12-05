@@ -22,6 +22,8 @@ pnpm-lock.yaml
 # Local environment files
 *.local
 
+# Tests
+coverage
 # Editor directories and files
 .vscode/
 !.vscode/extensions.json
