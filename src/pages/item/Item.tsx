@@ -6,7 +6,7 @@ import { ItemCard } from "@/widgets";
 import { useProduct } from "./hooks/useProduct";
 import { getRouteApi } from "@tanstack/react-router";
 import { ProductCardProps } from "@/shared/types/props";
-import { useDeviceWidth } from "@/shared/hooks/useDeviceWidth";
+import { useDeviceWidth } from "@/shared/lib/hooks/useDeviceWidth";
 
 const route = getRouteApi("/items/$itemId");
 

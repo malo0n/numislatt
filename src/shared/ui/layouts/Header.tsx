@@ -5,7 +5,7 @@ import arrow from "@/shared/image/icons/arrowDown.svg";
 import cart from "@/shared/image/icons/cart.svg";
 import profile from "@/shared/image/icons/profile.svg";
 import flag from "@/shared/image/flagBritish.png";
-import { useDeviceWidth } from "../../hooks/useDeviceWidth";
+import { useDeviceWidth } from "../../lib/hooks/useDeviceWidth";
 import burger from "@/shared/image/icons/burger.svg";
 
 export const Header = () => {

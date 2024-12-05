@@ -1,4 +1,4 @@
-import { useDeviceWidth } from "@/shared/hooks/useDeviceWidth";
+import { useDeviceWidth } from "@/shared/lib/hooks/useDeviceWidth";
 import { Loader } from "@/shared/ui";
 import { ItemCard } from "@/widgets";
 import FiltersComponent from "@/widgets/FiltersComponent";
