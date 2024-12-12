@@ -1,8 +1,8 @@
 import { useFormContext } from "react-hook-form";
-import { AllItemsFilters } from "../model/types";
+import { AllItemsFilters } from "@/shared/model";
 import { Button } from "@/shared/ui";
 import mainCoins from "@/shared/image/mainCoins.webp";
-import { useGetAllItemsFilters } from "../hooks/useGetAllItemsFilters";
+import { useGetAllItemsFilters } from "@/shared/lib";
 import searchIcon from "@/shared/image/icons/searchIcon.svg";
 
 export const SearchHeader = () => {

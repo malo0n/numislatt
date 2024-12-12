@@ -1,6 +1,18 @@
-export type { buttonProps } from "../types/props";
-export type { FadeComponentProps } from "../types/props";
-export type { continents } from "../types/types";
-export type { countries } from "../types/types";
-export type { grades } from "../types/types";
-export type { ProductCardProps } from "../types/props";
+export type {
+  buttonProps,
+  ProductCardProps,
+  FadeComponentProps,
+  SliderFilterProps,
+  checkboxProps,
+  FilterComponentProps,
+  RadioButtonProps,
+} from "./props";
+export type {
+  continentsType,
+  countriesType,
+  gradesType,
+  fullContinentsType,
+  IAllCountries,
+  AllItemsFilters,
+} from "./types";
+export { fullContinents, continents, countries, grades, pageLimit, sortOptions } from "./const";

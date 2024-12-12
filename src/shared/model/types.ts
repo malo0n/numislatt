@@ -1,4 +1,4 @@
-export type fullContinents =
+export type fullContinentsType =
   | "Europe"
   | "Asia"
   | "North America"
@@ -6,8 +6,8 @@ export type fullContinents =
   | "Africa"
   | "Australia/Oceania"
   | "Antarctica";
-export type continents = "AF" | "AN" | "AS" | "EU" | "NA" | "OC" | "SA";
-export type countries =
+export type continentsType = "AF" | "AN" | "AS" | "EU" | "NA" | "OC" | "SA";
+export type countriesType =
   | "AD"
   | "AE"
   | "AF"
@@ -260,10 +260,24 @@ export type countries =
   | "ZA"
   | "ZM"
   | "ZW";
-export type grades = "F" | "FR" | "G" | "PR" | "UNC" | "VF" | "VG" | "XF";
+export type gradesType = "F" | "FR" | "G" | "PR" | "UNC" | "VF" | "VG" | "XF";
 
 export interface IAllCountries {
   name: string;
-  iso: countries;
-  continent: fullContinents;
+  iso: countriesType;
+  continent: fullContinentsType;
+}
+
+export interface AllItemsFilters {
+  continent?: continentsType[];
+  country?: countriesType[];
+  grade?: gradesType[];
+  limit?: number;
+  offset?: number;
+  ordering?: "price" | "-price";
+  price_max?: number;
+  price_min?: number;
+  search?: string;
+  year_max?: number;
+  year_min?: number;
 }

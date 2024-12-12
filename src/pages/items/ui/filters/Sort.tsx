@@ -1,7 +1,7 @@
-import { toggleSection } from "@/shared/lib/helpers/toggleSection";
-import { sortOptions } from "@/shared/model/const";
+import { toggleSection } from "@/shared/lib";
+import { sortOptions } from "@/shared/model";
 import { AnimatePresence, motion } from "motion/react";
-import { RadioButton } from "../buttons/RadioButton";
+import { RadioButton } from "@/shared/ui";
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
 import { useState } from "react";
 

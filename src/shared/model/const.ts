@@ -1,7 +1,7 @@
-import type { continents as ContinentsType } from "../types/types";
-import type { countries as CountriesType } from "../types/types";
-import type { grades as GradesType } from "../types/types";
-import type { fullContinents as fullContinentsType } from "../types/types";
+import type { continentsType } from "./";
+import type { countriesType } from "./";
+import type { gradesType } from "./";
+import type { fullContinentsType } from "./";
 
 export const fullContinents: fullContinentsType[] = [
   "Europe",
@@ -12,8 +12,8 @@ export const fullContinents: fullContinentsType[] = [
   "Australia/Oceania",
   "Antarctica",
 ];
-export const continents: ContinentsType[] = ["AF", "AN", "AS", "EU", "NA", "OC", "SA"];
-export const countries: CountriesType[] = [
+export const continents: continentsType[] = ["AF", "AN", "AS", "EU", "NA", "OC", "SA"];
+export const countries: countriesType[] = [
   "AD",
   "AE",
   "AF",
@@ -267,7 +267,7 @@ export const countries: CountriesType[] = [
   "ZM",
   "ZW",
 ];
-export const grades: GradesType[] = ["UNC", "XF", "VF", "F", "VG", "G", "FR", "PR"];
+export const grades: gradesType[] = ["UNC", "XF", "VF", "F", "VG", "G", "FR", "PR"];
 
 export const pageLimit = 24;
 

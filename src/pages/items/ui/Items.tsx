@@ -1,12 +1,11 @@
-import { useDeviceWidth } from "@/shared/lib/hooks/useDeviceWidth";
+import { useDeviceWidth } from "@/shared/lib";
 import { Loader } from "@/shared/ui";
-import { ItemCard } from "@/widgets";
-import FiltersComponent from "@/widgets/FiltersComponent";
+import { ItemCard } from "@/pages/items/ui/ItemCard";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useGetCountries } from "../hooks/useGetCountries";
-import { useGetInfiniteItems } from "../hooks/useGetItems";
-import { useGetAllItemsFilters } from "../hooks/useGetAllItemsFilters";
+import { useGetCountries, useGetInfiniteItems } from "@/pages/items/lib";
+import { useGetAllItemsFilters } from "@/shared/lib";
+import { Sort, Filters } from "@/pages/items/ui";
 
 export const Items = () => {
   const searchParams = useGetAllItemsFilters();
@@ -30,7 +29,12 @@ export const Items = () => {
       ) : (
         <>
           <div className='flex w-full gap-5'>
-            {countries && deviceWidth >= 1024 && <FiltersComponent countries={countries} />}
+            {countries && deviceWidth >= 1024 && (
+              <div className='sticky top-[108px] mt-[108px] flex h-fit w-full max-w-[289px] select-none flex-col gap-5'>
+                <Sort></Sort>
+                <Filters countries={countries}></Filters>
+              </div>
+            )}
 
             <div className='flex w-full flex-col gap-16'>
               <p className='font-montserrat text-[36px] font-medium leading-[125%]'>Our collection</p>

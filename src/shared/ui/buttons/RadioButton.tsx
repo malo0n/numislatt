@@ -1,9 +1,9 @@
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { AllItemsFilters } from "@/shared/model";
 import { useFormContext, useWatch } from "react-hook-form";
 import checkedRadio from "@/shared/image/icons/checkedRadio.svg";
 import emptyRadio from "@/shared/image/icons/EmptyRadio.svg";
-import { RadioButtonProps } from "@/shared/types/props";
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
+import { RadioButtonProps } from "@/shared/model";
+import { useGetAllItemsFilters } from "@/shared/lib";
 
 export const RadioButton = (props: RadioButtonProps) => {
   const { value, label, name } = props;

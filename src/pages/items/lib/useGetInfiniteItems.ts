@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { getAllItems } from "../api/queries";
-import { AllItemsFilters } from "../model/types";
-import { pageLimit } from "@/shared/model/const";
+import { getAllItems } from "@/pages/items/api/queries";
+import { AllItemsFilters } from "@/shared/model";
+import { pageLimit } from "@/shared/model";
 import { baseUrl } from "@/shared/config";
 
 export const useGetInfiniteItems = (searchParams: AllItemsFilters) => {

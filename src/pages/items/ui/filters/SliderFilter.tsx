@@ -1,6 +1,6 @@
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
-import { AllItemsFilters } from "@/pages/items/model/types";
-import { SliderFilterProps } from "@/shared/types/props";
+import { useGetAllItemsFilters } from "@/shared/lib";
+import { AllItemsFilters } from "@/shared/model";
+import { SliderFilterProps } from "@/shared/model";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { Range, getTrackBackground } from "react-range";

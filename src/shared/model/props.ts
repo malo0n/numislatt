@@ -1,4 +1,4 @@
-import { continents, countries, fullContinents, grades, IAllCountries } from "./types";
+import { continentsType, countriesType, fullContinentsType, gradesType, IAllCountries } from "./";
 
 export interface buttonProps {
   text?: string;
@@ -20,9 +20,9 @@ export interface ProductCardProps {
     name: string;
   };
   country: {
-    iso: countries;
+    iso: countriesType;
     name: string;
-    continent: fullContinents;
+    continent: fullContinentsType;
   };
   year: number;
   price: number;
@@ -45,7 +45,7 @@ export interface SliderFilterProps {
   names: ["year_min", "year_max"] | ["price_min", "price_max"];
 }
 
-export interface checkboxProps<T extends continents | countries | grades> {
+export interface checkboxProps<T extends continentsType | countriesType | gradesType> {
   value: T;
   isChecked: boolean;
   text: string;

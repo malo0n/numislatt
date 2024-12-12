@@ -2,11 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { CustomSlider } from "./ui/CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
 import { Button, Loader } from "@/shared/ui";
-import { ItemCard } from "@/widgets";
-import { useProduct } from "./hooks/useProduct";
+import { useProduct } from "@/pages/item/lib";
 import { getRouteApi } from "@tanstack/react-router";
-import { ProductCardProps } from "@/shared/types/props";
-import { useDeviceWidth } from "@/shared/lib/hooks/useDeviceWidth";
+import { ProductCardProps } from "@/shared/model";
+import { useDeviceWidth } from "@/shared/lib";
+import { ItemCard } from "@/widgets";
 
 const route = getRouteApi("/items/$itemId");
 

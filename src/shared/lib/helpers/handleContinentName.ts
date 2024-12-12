@@ -1,5 +1,5 @@
 import { continents } from "@/shared/model";
-import { fullContinents } from "@/shared/types/types";
+import { fullContinents } from "@/shared/model/types";
 
 export const handleContinentName = (continent: continents): fullContinents => {
   switch (continent) {

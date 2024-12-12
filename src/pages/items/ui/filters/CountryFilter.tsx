@@ -1,12 +1,12 @@
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
 import { AnimatePresence, motion } from "motion/react";
-import { Checkbox } from "@/shared/ui/buttons/Checkbox";
-import { IAllCountries } from "@/shared/types/types";
+import { Checkbox } from "@/shared/ui";
+import { IAllCountries } from "@/shared/model";
 import { useFormContext, useWatch } from "react-hook-form";
-import { AllItemsFilters } from "@/pages/items/model/types";
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
+import { AllItemsFilters } from "@/shared/model";
+import { useGetAllItemsFilters } from "@/shared/lib";
 import { useState } from "react";
-import { toggleSection } from "@/shared/lib/helpers/toggleSection";
+import { toggleSection } from "@/shared/lib";
 
 export const CountryFilter = ({ countries }: { countries: IAllCountries[] }) => {
   const { control } = useFormContext<AllItemsFilters>();

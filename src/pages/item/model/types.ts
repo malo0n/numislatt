@@ -1,4 +1,4 @@
-import { countries, continents } from "@/shared/types/types";
+import { countriesType, continentsType } from "@/shared/model";
 
 export interface CarouselIndicatorsProps {
   images: string[];
@@ -25,9 +25,9 @@ export interface IItem {
     name: string;
   };
   country: {
-    iso: countries;
+    iso: countriesType;
     name: string;
-    continent: continents;
+    continent: continentsType;
   };
   year: number;
   price: number;

@@ -1,11 +1,10 @@
 import { useFormContext } from "react-hook-form";
-import { checkboxProps } from "../../types/props";
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { AllItemsFilters } from "@/shared/model";
 import checkedCheckbox from "@/shared/image/icons/checkedCheckbox.svg";
 import emptyCheckbox from "@/shared/image/icons/emptyCheckbox.svg";
-import { continents, countries, grades } from "../../model";
+import { continentsType, countriesType, gradesType, checkboxProps } from "@/shared/model";
 
-export const Checkbox = <T extends countries | continents | grades>(props: checkboxProps<T>) => {
+export const Checkbox = <T extends countriesType | continentsType | gradesType>(props: checkboxProps<T>) => {
   const { value, isChecked, text, name } = props;
   const { register } = useFormContext<AllItemsFilters>();
 

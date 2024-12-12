@@ -1,7 +1,7 @@
 import { SearchHeader } from "./ui/SearchHeader";
 import { FormProvider, useForm } from "react-hook-form";
-import { AllItemsFilters } from "./model/types";
-import { useSubmitFilters } from "./hooks/useSubmitFilters";
+import { AllItemsFilters } from "@/shared/model";
+import { useSubmitFilters } from "@/pages/items/lib";
 import { Items } from "./ui/Items";
 
 export const ItemsList = () => {

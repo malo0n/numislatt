@@ -1,6 +1,6 @@
-import { AllItemsFilters } from "../model/types";
+import { AllItemsFilters } from "@/shared/model";
 
-export function SearchParamsToFilters(searchParams?: AllItemsFilters): string {
+export function searchParamsToFilters(searchParams?: AllItemsFilters): string {
   if (Object.entries(searchParams!).length === 0) return "";
   const queryParams = Object.entries(searchParams!).flatMap(([key, value]) => {
     if (Array.isArray(value)) {

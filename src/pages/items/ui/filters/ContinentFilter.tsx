@@ -1,11 +1,11 @@
-import { handleContinentName } from "@/shared/lib/helpers/handleContinentName";
-import { toggleSection } from "@/shared/lib/helpers/toggleSection";
-import { continents } from "@/shared/model/const";
+import { handleContinentName } from "@/shared/lib";
+import { toggleSection } from "@/shared/lib/";
+import { continents } from "@/shared/model";
 import { AnimatePresence, motion } from "motion/react";
-import { Checkbox } from "@/shared/ui/buttons/Checkbox";
+import { Checkbox } from "@/shared/ui";
 import { useFormContext, useWatch } from "react-hook-form";
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { useGetAllItemsFilters } from "@/shared/lib";
+import { AllItemsFilters } from "@/shared/model";
 import { useState } from "react";
 
 import filterArrow from "@/shared/image/icons/filterArrow.svg";

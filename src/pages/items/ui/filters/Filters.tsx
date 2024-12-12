@@ -1,15 +1,12 @@
-import { filterCounter } from "@/shared/lib/helpers/filterCounter";
-import { toggleSection } from "@/shared/lib/helpers/toggleSection";
+import { toggleSection, useGetAllItemsFilters } from "@/shared/lib";
 import { AnimatePresence, motion } from "motion/react";
-import { Button } from "../buttons/Button";
-import { ContinentFilter } from "./ContinentFilter";
-import { CountryFilter } from "./CountryFilter";
-import { SliderFilter } from "./SliderFilter";
-import { IAllCountries } from "@/shared/types/types";
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
+import { Button } from "@/shared/ui";
+import { ContinentFilter, CountryFilter, SliderFilter } from "@/pages/items/ui";
+import { IAllCountries } from "@/shared/model";
+import { filterCounter } from "@/pages/items/lib";
 import { useState } from "react";
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
-import { GradeFilter } from "@/shared/ui/filters/GradeFilter";
+import { GradeFilter } from "@/pages/items/ui";
 
 export const Filters = (props: { countries: IAllCountries[] }) => {
   const { countries } = props;

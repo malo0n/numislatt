@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { AllItemsFilters } from "../model/types";
+import { AllItemsFilters } from "@/shared/model";
 
 export const useSubmitFilters = () => {
   const navigate = useNavigate();

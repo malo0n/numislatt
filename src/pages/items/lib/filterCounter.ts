@@ -1,4 +1,4 @@
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { AllItemsFilters } from "@/shared/model";
 
 export const filterCounter = (data: AllItemsFilters) => {
   let counter = 0;

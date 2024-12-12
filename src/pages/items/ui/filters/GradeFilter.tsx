@@ -1,10 +1,10 @@
-import { toggleSection } from "@/shared/lib/helpers/toggleSection";
-import { grades } from "@/shared/model/const";
+import { toggleSection } from "@/shared/lib";
+import { grades } from "@/shared/model";
 import { AnimatePresence, motion } from "motion/react";
-import { Checkbox } from "../buttons/Checkbox";
+import { Checkbox } from "@/shared/ui";
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
-import { useGetAllItemsFilters } from "@/pages/items/hooks/useGetAllItemsFilters";
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { useGetAllItemsFilters } from "@/shared/lib";
+import { AllItemsFilters } from "@/shared/model";
 import { useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 

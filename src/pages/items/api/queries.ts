@@ -1,14 +1,14 @@
-import { AllItemsFilters, IAllItems } from "@/pages/items/model/types";
+import { IAllItems } from "@/pages/items/model";
 import { api } from "@/shared/api";
-import { SearchParamsToFilters } from "../helpers/searchParamsToFilters";
-import { IAllCountries } from "@/shared/types/types";
+import { searchParamsToFilters } from "@/pages/items/lib";
+import { AllItemsFilters, IAllCountries } from "@/shared/model";
 
 export const getAllItems = async (
   { pageParam }: { pageParam?: string },
   searchParams: AllItemsFilters,
 ): Promise<IAllItems> => {
   try {
-    const queryParams = SearchParamsToFilters(searchParams);
+    const queryParams = searchParamsToFilters(searchParams);
     const allItems: IAllItems = await api.get(`products/?${pageParam}&${queryParams}`).then((res) => res.data);
     return allItems;
   } catch (error) {
