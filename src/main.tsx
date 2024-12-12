@@ -5,9 +5,9 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import "./index.css";
-import { Loader } from "./shared/ui";
-import { NotFound } from "./pages";
+import "@/index.css";
+import { Loader } from "@/shared/ui";
+import { NotFound } from "@/shared/ui";
 
 const queryClient = new QueryClient({
   defaultOptions: {

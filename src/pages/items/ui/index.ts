@@ -6,3 +6,4 @@ export { GradeFilter } from "./filters/GradeFilter";
 export { SliderFilter } from "./filters/SliderFilter";
 export { Sort } from "./filters/Sort";
 export { Filters } from "./filters/Filters";
+export { ItemCard } from "@/shared/ui";

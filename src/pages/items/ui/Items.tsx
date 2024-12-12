@@ -1,6 +1,6 @@
 import { useDeviceWidth } from "@/shared/lib";
 import { Loader } from "@/shared/ui";
-import { ItemCard } from "@/pages/items/ui/ItemCard";
+import { ItemCard } from "@/shared/ui";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useGetCountries, useGetInfiniteItems } from "@/pages/items/lib";
@@ -16,6 +16,7 @@ export const Items = () => {
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !isFetchingNextPage && hasNextPage) fetchNextPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView, fetchNextPage]);
 
   if (isError || isErrorCountries) {

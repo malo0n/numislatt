@@ -1,5 +1,5 @@
-import { ItemsList } from "@/pages";
-import { AllItemsFilters } from "@/pages/items/model/types";
+import { ItemsList } from "@/pages/items";
+import { AllItemsFilters } from "@/shared/model";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/items/")({

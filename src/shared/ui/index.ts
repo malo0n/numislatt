@@ -7,3 +7,4 @@ export { Loader } from "./layouts/Loader";
 export { NotFound } from "./layouts/NotFound";
 export { RootLayout } from "./layouts/RootLayout";
 export { FadeComponent } from "./FadeComponent";
+export { ItemCard } from "./ItemCard";
