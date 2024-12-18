@@ -1,9 +1,9 @@
 import { Button, FadeComponent } from "@/shared/ui";
 import cart from "@/shared/image/icons/addToCart.svg";
 import { Link } from "@tanstack/react-router";
-import { ProductCardProps } from "@/shared/model";
+import { ProductCardProps } from "@/entities/product";
 
-export function ItemCard(props: ProductCardProps) {
+export function ProductCard(props: ProductCardProps) {
   const { id, name, image, price, year, country, grade } = props;
   return (
     <FadeComponent>

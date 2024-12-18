@@ -2,12 +2,12 @@ import { StrictMode, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 
-import { routeTree } from "./routeTree.gen";
+import { routeTree } from "../../routeTree.gen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import "@/index.css";
+import "@/app/styles/index.css";
 import { Loader } from "@/shared/ui";
-import { NotFound } from "@/shared/ui";
+import { NotFound } from "@/app/layouts/NotFound";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,6 +20,7 @@ const queryClient = new QueryClient({
     },
   },
 });
+
 const router = createRouter({
   routeTree,
   context: {

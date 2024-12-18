@@ -2,7 +2,7 @@ import { useQueries, UseQueryResult } from "@tanstack/react-query";
 import { getItem, getItemRecommendations } from "@/pages/item/api/queries";
 import { useCallback } from "react";
 import { IItem } from "../model/types";
-import { ProductCardProps } from "@/shared/model";
+import { ProductCardProps } from "@/entities/product";
 export const useProduct = (id: number) => {
   return useQueries({
     queries: [

@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { routes } from "../../lib";
 import logo from "@/shared/image/icons/logoWhite.svg";
 
 export function Footer() {
   return (
     <footer className='flex justify-between bg-mainBlack px-4 py-16 text-secondaryWhite lg:px-[112px] lg:py-8'>
       <div className='flex h-full w-full flex-col gap-8 lg:gap-[64px]'>
-        <Link to={routes.items_page} className='flex items-end gap-[7px]'>
+        <Link to='/items' className='flex items-end gap-[7px]'>
           <img className='w-[57px] border-secondaryWhite' src={logo} alt='logo' />
           <p className='font-habibi text-[42px] leading-[125%]'>Numislat</p>
         </Link>

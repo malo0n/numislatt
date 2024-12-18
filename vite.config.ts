@@ -10,4 +10,27 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  build: {
+    target: "esnext",
+    cssMinify: "esbuild",
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+        },
+      },
+    },
+    minify: "esbuild",
+    chunkSizeWarningLimit: 500,
+  },
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
+  server: {
+    port: 3000,
+    open: true,
+  },
 });

@@ -1,5 +1,5 @@
 import { IAllItems } from "@/pages/items/model";
-import { api } from "@/shared/api";
+import { api } from "@/shared/config";
 import { searchParamsToFilters } from "@/pages/items/lib";
 import { AllItemsFilters, IAllCountries } from "@/shared/model";
 

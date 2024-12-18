@@ -1,4 +1,4 @@
-import { continentsType, countriesType, fullContinentsType, gradesType, IAllCountries } from "./";
+import { continentsType, countriesType, gradesType, IAllCountries } from "./";
 
 export interface buttonProps {
   text?: string;
@@ -6,27 +6,6 @@ export interface buttonProps {
   icon?: string;
   className?: string;
   onClick?: () => void;
-}
-
-export interface ProductCardProps {
-  readonly id: number;
-  name: string;
-  image: {
-    image: string;
-    display_order: number;
-  };
-  grade: {
-    code: string;
-    name: string;
-  };
-  country: {
-    iso: countriesType;
-    name: string;
-    continent: fullContinentsType;
-  };
-  year: number;
-  price: number;
-  quantity: number;
 }
 
 export interface FadeComponentProps {

@@ -1,6 +1,6 @@
 import { useDeviceWidth } from "@/shared/lib";
 import { Loader } from "@/shared/ui";
-import { ItemCard } from "@/shared/ui";
+import { ProductCard } from "@/entities/product";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useGetCountries, useGetInfiniteItems } from "@/pages/items/lib";
@@ -46,7 +46,7 @@ export const Items = () => {
                   {data.pages.map((group) => (
                     <>
                       {group.results.map((item) => (
-                        <ItemCard key={item.id} {...item} />
+                        <ProductCard key={item.id} {...item} />
                       ))}
                     </>
                   ))}
@@ -55,9 +55,7 @@ export const Items = () => {
             </div>
           </div>
 
-          <div ref={ref} onClick={() => fetchNextPage()}>
-            pagination
-          </div>
+          <div ref={ref} onClick={() => fetchNextPage()} />
         </>
       )}
     </div>

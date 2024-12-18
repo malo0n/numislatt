@@ -1,6 +1,5 @@
 export type {
   buttonProps,
-  ProductCardProps,
   FadeComponentProps,
   SliderFilterProps,
   checkboxProps,

@@ -10,10 +10,10 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./routes/__root";
-import { Route as LayoutImport } from "./routes/_layout";
-import { Route as ItemsIndexImport } from "./routes/items/index";
-import { Route as ItemsItemIdImport } from "./routes/items/$itemId";
+import { Route as rootRoute } from "./app/routes/__root";
+import { Route as LayoutImport } from "./app/routes/_layout";
+import { Route as ItemsIndexImport } from "./app/routes/items/index";
+import { Route as ItemsItemIdImport } from "./app/routes/items/$itemId";
 
 // Create/Update Routes
 

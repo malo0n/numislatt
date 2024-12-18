@@ -1,7 +1,7 @@
 import notFoundCoin from "@/shared/image/404coin.webp";
-import { Button } from "..";
+import { Button } from "../../shared/ui";
 import { Link } from "@tanstack/react-router";
-import { routes } from "../../lib";
+import { routes } from "../../shared/lib";
 
 export const NotFound = () => {
   return (

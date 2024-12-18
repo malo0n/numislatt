@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { CustomSlider } from "./ui/CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
-import { Button, Loader } from "@/shared/ui";
+import { Button } from "@/shared/ui";
+import { Loader } from "@/shared/ui";
 import { useProduct } from "@/pages/item/lib";
 import { getRouteApi } from "@tanstack/react-router";
-import { ProductCardProps } from "@/shared/model";
+import { ProductCardProps } from "@/entities/product";
 import { useDeviceWidth } from "@/shared/lib";
-import { ItemCard } from "@/shared/ui";
+import { ProductCard } from "@/entities/product";
 
 const route = getRouteApi("/items/$itemId");
 
@@ -73,7 +74,7 @@ export function Item() {
         <p className='text-24 lg:text-32'>You may also like</p>
         <div className='flex max-w-full gap-5 overflow-x-auto'>
           {recommendations.map((item: ProductCardProps) => (
-            <ItemCard key={item.id} {...item} />
+            <ProductCard key={item.id} {...item} />
           ))}
         </div>
       </div>

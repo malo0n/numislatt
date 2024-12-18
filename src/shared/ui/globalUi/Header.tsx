@@ -1,11 +1,10 @@
 import logo from "@/shared/image/icons/logoBlack.svg";
 import { Link } from "@tanstack/react-router";
-import { routes } from "../../lib";
 import arrow from "@/shared/image/icons/arrowDown.svg";
 import cart from "@/shared/image/icons/cart.svg";
 import profile from "@/shared/image/icons/profile.svg";
 import flag from "@/shared/image/flagBritish.png";
-import { useDeviceWidth } from "../../lib/functions/useDeviceWidth";
+import { useDeviceWidth } from "../../lib";
 import burger from "@/shared/image/icons/burger.svg";
 
 export const Header = () => {
@@ -13,7 +12,7 @@ export const Header = () => {
 
   return (
     <header className='fixed top-0 z-30 flex h-[48px] w-full items-center justify-between border-b-2 border-solid border-tetriaryBlack bg-mainWhite px-[22px] text-mainBlack lg:h-[68px] lg:px-[112px]'>
-      <Link to={routes.items_page} className='flex gap-1'>
+      <Link to='/items' className='flex gap-1'>
         <img className='size-5 lg:size-8' src={logo} alt='logo' />
         <p className='font-habibi text-16 lg:text-24'>Numislat</p>
       </Link>
