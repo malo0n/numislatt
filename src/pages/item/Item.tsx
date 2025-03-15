@@ -1,21 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { CustomSlider } from "./ui/CustomSlider";
 import leftArrow from "@/shared/image/icons/leftArrow.svg";
-import { Button } from "@/shared/ui";
-import { Loader } from "@/shared/ui";
+import { Button, Loader } from "@/shared/ui";
 import { useProduct } from "@/pages/item/lib";
 import { getRouteApi } from "@tanstack/react-router";
-import { ProductCardProps } from "@/entities/product";
 import { useDeviceWidth } from "@/shared/lib";
 import { ProductCard } from "@/entities/product";
 
-const route = getRouteApi("/items/$itemId");
+const ItemRouteApi = getRouteApi("/items/$itemId");
 
 export function Item() {
   const deviceWidth = useDeviceWidth();
-  const { itemId } = route.useParams();
-  const { data, isLoading, isError } = useProduct(Number(itemId));
-  const { coin, recommendations } = data;
+  const { itemId } = ItemRouteApi.useParams();
+  const { itemData, isLoading, isError } = useProduct(Number(itemId));
+  const { coin, recommendations } = itemData;
+  
   if (isLoading || !coin || !recommendations) {
     return <Loader />;
   }
@@ -23,6 +22,7 @@ export function Item() {
     return <div>Error</div>;
   }
   const { name, price, description, images, year, country } = coin;
+
   return (
     <section className='flex flex-col gap-8 px-4 py-8 lg:gap-[124px] lg:px-[108px] lg:py-[64px]'>
       <div className='flex flex-col gap-[27px]'>
@@ -30,7 +30,7 @@ export function Item() {
           {deviceWidth >= 1024 && (
             <div className='h-fit w-full rounded-2xl bg-[#fff] px-[30px] pb-5 pt-[100px]'>
               <CustomSlider>
-                {images.map((image: { image: string; display_order: number }) => image.image)}
+                {images.map((image) => image.image)}
               </CustomSlider>
             </div>
           )}
@@ -41,7 +41,7 @@ export function Item() {
             </Link>
             {deviceWidth < 1024 && (
               <CustomSlider>
-                {images.map((image: { image: string; display_order: number }) => image.image)}
+                {images.map((image) => image.image)}
               </CustomSlider>
             )}
             <p className='text-24 leading-[125%] lg:text-32 lg:leading-[56px]'>{name}</p>
@@ -73,7 +73,7 @@ export function Item() {
       <div className='flex flex-col gap-[10px] lg:gap-16'>
         <p className='text-24 lg:text-32'>You may also like</p>
         <div className='flex max-w-full gap-5 overflow-x-auto'>
-          {recommendations.map((item: ProductCardProps) => (
+          {recommendations.map((item) => (
             <ProductCard key={item.id} {...item} />
           ))}
         </div>

@@ -7,9 +7,9 @@ export function RootLayout() {
   return (
     <div className='flex min-h-[85dvh] flex-col bg-mainWhite'>
       <Header></Header>
+      <AuthDialog />
       <div className='mt-[48px] lg:mt-[68px]'>
         <Outlet />
-        <AuthDialog />
       </div>
       <Footer></Footer>
     </div>

@@ -1,8 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { getCountries } from "@/pages/items/api/queries";
 
 export const useGetCountries = () => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: ["countries"],
     queryFn: () => getCountries(),
     staleTime: Infinity,

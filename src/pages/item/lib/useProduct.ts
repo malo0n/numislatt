@@ -17,7 +17,7 @@ export const useProduct = (id: number) => {
     ],
     combine: useCallback((data: [UseQueryResult<IItem>, UseQueryResult<ProductCardProps[]>]) => {
       return {
-        data: { coin: data[0].data, recommendations: data[1].data },
+        itemData: { coin: data[0].data, recommendations: data[1].data },
         isLoading: data.some((item) => item.isLoading),
         isError: data.some((item) => item.isError),
       };

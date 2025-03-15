@@ -3,7 +3,7 @@ import cart from "@/shared/image/icons/addToCart.svg";
 import { Link } from "@tanstack/react-router";
 import { ProductCardProps } from "@/entities/product";
 
-export function ProductCard(props: ProductCardProps) {
+export function ProductCard() {
   const { id, name, image, price, year, country, grade } = props;
   return (
     <FadeComponent>

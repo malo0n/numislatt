@@ -8,7 +8,7 @@ import { useState } from "react";
 import filterArrow from "@/shared/image/icons/filterArrow.svg";
 import { GradeFilter } from "@/pages/items/ui";
 
-export const Filters = (props: { countries: IAllCountries[] }) => {
+export const Filters = (props: { countries: IAllCountries[]}) => {
   const { countries } = props;
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
   const searchParams = useGetAllItemsFilters();
